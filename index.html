@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>基于jquery的日历</title>
+  <link rel="stylesheet" href="myCalendar.css">
+  <style>
+  body{
+    background-color: #f2f2f2;
+  }
+  </style>
+</head>
+<body>
+  <span class="date-txt"></span>
+  <div class="content"></div>
+  <script src="./jquery.min.js"></script>
+  <script src="./myCalendar.js"></script>
+  <script>
+  $('.content').change(function(e,date){
+      /* 选择完日期之后的操作 */
+      console.log(date)
+      $('.date-txt').text(date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate())
+    })
+    //传入从今天起的数据
+    .myCalendar([89,123, 45, 12,4,67,12,9,45,123,67,68,34,56,120,45,23,45,67,24,45,56,67,23,34,45,56,0, 23, 65, 13, 45, 67, 13, 14, 25, 155, 389, 345, 23, 35, 2, 0, 1, 4, 4, 14, 245, 24, 25])
+  </script>
+</body>
+</html>
